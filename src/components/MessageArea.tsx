@@ -3,7 +3,7 @@ import {useState} from 'react';
 import {func} from "prop-types";
 import Message from "../messages/Message";
 import MessageList from "../messages/MessageList";
-import {ReadOrUnread, RedBanner} from "./styledComponents";
+import {Div, RedBanner, StyledArticle, StyledHeading} from "./styledComponents";
 
 
 export const MessageArea = (props: MsgProp): JSX.Element => {
@@ -15,16 +15,13 @@ export const MessageArea = (props: MsgProp): JSX.Element => {
     };
 
     return (
-        <> <h1>Messages</h1>
+        <Div> <StyledHeading>Messages</StyledHeading>
             {unreadCount > 0 && <RedBanner>
                 You have {unreadCount} unread Messages!
             </RedBanner>}
-            <ul>
-                {mList.list.map((item: Message) => <ReadOrUnread unread={item.unread} onClick={(): void => markAsRead(item)}
-                                                       key={item.id}>{item.title}<br/>{item.body}<br/></ReadOrUnread>)}
-                <br/>
-            </ul>
-        </>
+                {mList.list.map((item: Message) => <StyledArticle unread={item.unread} onClick={(): void => markAsRead(item)}
+                                                       key={item.id}>{item.title}<br/>{item.body}<br/></StyledArticle>)}
+        </Div>
     )
 };
 

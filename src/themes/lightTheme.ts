@@ -9,7 +9,7 @@ export default {
         btn:"palegreen",
         btnBackground: "lightyellow",
         banner: "darkred",
-        unreadLi: "lightcyan",
-        readLi: "white"
+        unread: "lightcyan",
+        read: "white"
     }
 }

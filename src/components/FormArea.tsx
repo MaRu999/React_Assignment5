@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {ChangeEvent, FormEvent, useState} from 'react';
 import {func} from "prop-types";
-import {StyledBtn, StyledInput, StyledTextArea} from "./styledComponents";
+import {StyledBtn, StyledHeading, StyledInput, StyledTextArea} from "./styledComponents";
 
 
 
@@ -19,7 +19,7 @@ export const FormArea = (props: FormProp): JSX.Element => {
 
     return (
         <>
-            <h1>Add new Message</h1>
+            <StyledHeading>Add new Message</StyledHeading>
             <form onSubmit={submitForm}>
 
                     <StyledInput type="text" name={name} id="titlefield"

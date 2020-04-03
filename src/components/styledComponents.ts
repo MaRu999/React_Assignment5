@@ -4,6 +4,13 @@ interface MyTagProps {
     unread: boolean;
 }
 
+export const StyledArticle = styled.article`
+background-color: ${ (props: MyTagProps): string => (
+    props.unread
+        ? 'lightcyan'
+        : 'white')};
+`;
+
 export const Div = styled.div`
 background-color: ${(props): string => props.theme.colors.background};
 color: ${(props): string => props.theme.colors.font};
@@ -14,19 +21,13 @@ background-color: ${(props): string => props.theme.colors.background};
 color: ${(props): string => props.theme.colors.font};
 height: 100vh;`;
 
-export const ReadOrUnread = styled.li`
-    background-color: ${ (props: MyTagProps): string => (
-    props.unread
-        ? 'lightcyan'
-        : 'white')};
-`;
-
 export const RedBanner = styled.h3`
-        color: ${(props): string => props.theme.colors.banner}`;
+        color: ${(props): string => props.theme.colors.banner};
+        background-color: ${(props): string => props.theme.colors.background}`;
 
 export const StyledInput = styled.input`
-color: ${(props): string  => props.theme.colors.font}
-background-color: ${(props): string  => props.theme.colors.input}
+color: ${(props): string  => props.theme.colors.font};
+background-color: ${(props): string  => props.theme.colors.input};
 width: 20%;
 margin: 8px 0;
 box-sizing: border-box
@@ -34,7 +35,7 @@ box-sizing: border-box
 
 
 export const StyledTextArea = styled.textarea`
-  color: ${(props): string  => props.theme.colors.font}
+  color: ${(props): string  => props.theme.colors.font};
   background-color: ${(props): string  => props.theme.colors.textarea};
   width: 100%;
   height: 150px;
@@ -66,3 +67,7 @@ background-color: ${(props): string  => props.theme.colors.navbtnBackground};
   display: inline-block;
   font-size: 12px;
 `;
+
+export const StyledHeading = styled.h1`
+color: ${(props): string  => props.theme.colors.font};
+font-family: "Lucida Console", Monaco, monospace;`;
