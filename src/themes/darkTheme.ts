@@ -4,6 +4,8 @@ export default {
         font: "white",
         textarea: "navy",
         input: "purple",
+        navbtn: "mintcream",
+        navbtnBackground: "teal",
         btn:"seagreen",
         btnBackground: "darkkhaki",
         banner: "red",

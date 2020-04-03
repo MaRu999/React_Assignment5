@@ -4,7 +4,7 @@ import {useState} from "react";
 import darkTheme from "../themes/darkTheme";
 import lightTheme from "../themes/lightTheme";
 import {ThemeProvider} from "styled-components";
-import {Div} from "./styledComponents";
+import {Div, FillerDiv} from "./styledComponents";
 
 export const App = (): JSX.Element => {
 
@@ -21,8 +21,10 @@ export const App = (): JSX.Element => {
             <label>Dark Theme
                 <input type="checkbox" id="theme" name="themeBox" checked={checkDarkTheme} onClick={(): void => themeSwitch()}/>
             </label>
-            <NavContainer displayForm={true} darkTheme={checkDarkTheme}/>
+            <NavContainer displayForm={true}/>
             </Div>
+            <FillerDiv>
+            </FillerDiv>
         </ThemeProvider>
     )
 };

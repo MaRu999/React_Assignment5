@@ -6,7 +6,7 @@ import Message from "../messages/Message";
 import MessageList from "../messages/MessageList";
 import {FormArea} from "./FormArea";
 import {MessageArea} from "./MessageArea";
-import {Div} from "./styledComponents";
+import {Div, StyledNavBtn} from "./styledComponents";
 
 export const NavContainer = (props: NavProp): JSX.Element => {
     const [msgList] = useState(new MessageList(new Array<Message>()));
@@ -30,14 +30,14 @@ export const NavContainer = (props: NavProp): JSX.Element => {
     return (
         <>
             <Div>
-                <button id="formBtn" onClick={(): void => {
+                <StyledNavBtn id="formBtn" onClick={(): void => {
                     setFormDisplay(true);
                 }}>Add new Message
-                </button>
-                <button id="msgBtn" onClick={(): void => {
+                </StyledNavBtn>
+                <StyledNavBtn id="msgBtn" onClick={(): void => {
                     setFormDisplay(false);
                 }}>Messages ({unreadCount <= 5 ? unreadCount : "5+"} new Messages)
-                </button>
+                </StyledNavBtn>
             </Div>
             {!formDisplay && <Div>
                 <MessageArea messages={msgList} updateCount={updateCount}/>
