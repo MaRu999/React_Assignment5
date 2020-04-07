@@ -8,20 +8,20 @@ import {Div, FillerDiv} from "./styledComponents";
 
 export const App = (): JSX.Element => {
 
-    const[checkDarkTheme, setCheckDarkTheme] = useState(false);
+    const [theme, setTheme] = useState("light");
 
-    const themeSwitch = (): void => {
-        setCheckDarkTheme(!checkDarkTheme);
+    const changeTheme = (): void => {
+        setTheme((theme === "light" ? "dark" : "light"))
     };
 
-
     return (
-        <ThemeProvider theme={checkDarkTheme ? darkTheme : lightTheme}>
+        <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
             <Div>
-            <label>Dark Theme
-                <input type="checkbox" id="theme" name="themeBox" checked={checkDarkTheme} onClick={(): void => themeSwitch()}/>
-            </label>
-            <NavContainer isDarkTheme={checkDarkTheme} displayForm={true}/>
+                <label>Dark Theme
+                    <input type="checkbox" id="theme" name="themeBox" checked={theme === "dark"}
+                           onClick={(): void => changeTheme()}/>
+                </label>
+                <NavContainer themeName={theme} displayForm={true}/>
             </Div>
             <FillerDiv>
             </FillerDiv>

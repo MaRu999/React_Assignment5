@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useState} from 'react';
-import {bool, func} from "prop-types";
+import {func, string} from "prop-types";
 import Message from "../messages/Message";
 import MessageList from "../messages/MessageList";
 import {Div, RedBanner, StyledArticle, StyledHeading} from "./styledComponents";
@@ -19,7 +19,7 @@ export const MessageArea = (props: MsgProp): JSX.Element => {
             {unreadCount > 0 && <RedBanner>
                 You have {unreadCount} unread Messages!
             </RedBanner>}
-                {mList.list.map((item: Message) => <StyledArticle isDarkTheme={props.isDarkTheme} unread={item.unread} onClick={(): void => markAsRead(item)}
+                {mList.list.map((item: Message) => <StyledArticle themeName={props.themeName} unread={item.unread} onClick={(): void => markAsRead(item)}
                                                        key={item.id}>{item.title}<br/>{item.body}<br/></StyledArticle>)}
         </Div>
     )
@@ -28,11 +28,11 @@ export const MessageArea = (props: MsgProp): JSX.Element => {
 MessageArea.propTypes = {
     messages: MessageList,
     updateCount: func.isRequired,
-    isDarkTheme: bool.isRequired
+    themeName: string.isRequired
 };
 
 type MsgProp = {
     messages: MessageList;
     updateCount: Function;
-    isDarkTheme: boolean;
+    themeName: string;
 }

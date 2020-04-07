@@ -2,7 +2,8 @@
   "scripts": {
     "build": "webpack -p",
     "watch": "webpack -d -w",
-    "lint": "eslint . --ext .tsx"
+    "lint": "eslint . --ext .tsx",
+    "tslint": "eslint . --ext .ts"
   },
   "devDependencies": {
     "styled-components": "^5.0.1",

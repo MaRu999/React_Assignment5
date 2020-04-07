@@ -1,21 +1,21 @@
 import styled from "styled-components";
-import {bool} from "prop-types";
+import {bool, string} from "prop-types";
 
 
 export const StyledArticle = styled.article`
 background-color: ${(props: MyTagProps): string => (
     props.unread
-        ? (props.isDarkTheme ? 'darkcyan' : 'lightcyan') : (props.isDarkTheme ? 'black' : 'white'))};
+        ? ((props.themeName === "dark") ? 'darkcyan' : 'lightcyan') : ((props.themeName === "dark") ? 'black' : 'white'))};
 `;
 
 interface MyTagProps {
     unread: boolean;
-    isDarkTheme: boolean;
+    themeName: string;
 }
 
 StyledArticle.propTypes = {
     unread: bool.isRequired,
-    isDarkTheme: bool.isRequired
+    themeName: string.isRequired
 };
 
 

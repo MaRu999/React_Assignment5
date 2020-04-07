@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState} from 'react';
 import {useCallback} from 'react';
-import {bool} from "prop-types";
+import {bool, string} from "prop-types";
 import Message from "../messages/Message";
 import MessageList from "../messages/MessageList";
 import {FormArea} from "./FormArea";
@@ -40,7 +40,7 @@ export const NavContainer = (props: NavProp): JSX.Element => {
                 </StyledNavBtn>
             </Div>
             {!formDisplay && <Div>
-                <MessageArea isDarkTheme={props.isDarkTheme} messages={msgList} updateCount={updateCount}/>
+                <MessageArea themeName={props.themeName} messages={msgList} updateCount={updateCount}/>
             </Div>}
             <Div>
                 {formDisplay && <Div>
@@ -54,10 +54,10 @@ export const NavContainer = (props: NavProp): JSX.Element => {
 
 type NavProp = {
     displayForm: boolean;
-    isDarkTheme: boolean;
+    themeName: string;
 }
 
 NavContainer.propTypes = {
     displayForm: bool.isRequired,
-    isDarkTheme: bool.isRequired
+    themeName: string.isRequired
 };
