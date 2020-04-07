@@ -12,6 +12,7 @@ The components have now been separated properly.
 ## Notes to styling with styled Components
 For the theme, a string state is used. With only two themes, a boolean could be used, but a string allows for more themes to be added later.
 I am not a designer, and the styling was done to show that switching the theme makes a difference, not to be pretty.
+Styling for the messages was done in the Styled component itself with the help of the theme-name, since I found no proper way to pass custom props together with the theme-prop. The used colors were left in the themes for now, but commented out since they are unused.
 
 ## Styling oddities
 If the dark theme is selected, a white border surrounds the application. Not sure why.

@@ -8,8 +8,8 @@ export default {
         navbtnBackground: "ivory",
         btn:"palegreen",
         btnBackground: "lightyellow",
-        banner: "darkred",
-        unread: "lightcyan",
-        read: "white"
+        banner: "darkred"
+        //unread: "lightcyan",
+        //read: "white"
     }
 }
