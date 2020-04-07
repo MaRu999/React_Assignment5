@@ -40,7 +40,7 @@ export const NavContainer = (props: NavProp): JSX.Element => {
                 </StyledNavBtn>
             </Div>
             {!formDisplay && <Div>
-                <MessageArea messages={msgList} updateCount={updateCount}/>
+                <MessageArea isDarkTheme={props.isDarkTheme} messages={msgList} updateCount={updateCount}/>
             </Div>}
             <Div>
                 {formDisplay && <Div>
@@ -54,8 +54,10 @@ export const NavContainer = (props: NavProp): JSX.Element => {
 
 type NavProp = {
     displayForm: boolean;
+    isDarkTheme: boolean;
 }
 
 NavContainer.propTypes = {
-    displayForm: bool.isRequired
+    displayForm: bool.isRequired,
+    isDarkTheme: bool.isRequired
 };

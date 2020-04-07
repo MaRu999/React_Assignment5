@@ -21,7 +21,7 @@ export const App = (): JSX.Element => {
             <label>Dark Theme
                 <input type="checkbox" id="theme" name="themeBox" checked={checkDarkTheme} onClick={(): void => themeSwitch()}/>
             </label>
-            <NavContainer displayForm={true}/>
+            <NavContainer isDarkTheme={checkDarkTheme} displayForm={true}/>
             </Div>
             <FillerDiv>
             </FillerDiv>

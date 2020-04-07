@@ -1,15 +1,23 @@
 import styled from "styled-components";
+import {bool} from "prop-types";
+
+
+export const StyledArticle = styled.article`
+background-color: ${(props: MyTagProps): string => (
+    props.unread
+        ? (props.isDarkTheme ? 'darkcyan' : 'lightcyan') : (props.isDarkTheme ? 'black' : 'white'))};
+`;
 
 interface MyTagProps {
     unread: boolean;
+    isDarkTheme: boolean;
 }
 
-export const StyledArticle = styled.article`
-background-color: ${ (props: MyTagProps): string => (
-    props.unread
-        ? 'lightcyan'
-        : 'white')};
-`;
+StyledArticle.propTypes = {
+    unread: bool.isRequired,
+    isDarkTheme: bool.isRequired
+};
+
 
 export const Div = styled.div`
 background-color: ${(props): string => props.theme.colors.background};
@@ -26,8 +34,8 @@ export const RedBanner = styled.h3`
         background-color: ${(props): string => props.theme.colors.background}`;
 
 export const StyledInput = styled.input`
-color: ${(props): string  => props.theme.colors.font};
-background-color: ${(props): string  => props.theme.colors.input};
+color: ${(props): string => props.theme.colors.font};
+background-color: ${(props): string => props.theme.colors.input};
 width: 20%;
 margin: 8px 0;
 box-sizing: border-box
@@ -35,8 +43,8 @@ box-sizing: border-box
 
 
 export const StyledTextArea = styled.textarea`
-  color: ${(props): string  => props.theme.colors.font};
-  background-color: ${(props): string  => props.theme.colors.textarea};
+  color: ${(props): string => props.theme.colors.font};
+  background-color: ${(props): string => props.theme.colors.textarea};
   width: 100%;
   height: 150px;
   padding: 12px 20px;
@@ -47,9 +55,9 @@ export const StyledTextArea = styled.textarea`
 `;
 
 export const StyledBtn = styled.button`
-background-color: ${(props): string  => props.theme.colors.btnBackground};
+background-color: ${(props): string => props.theme.colors.btnBackground};
   border: none;
-  color: ${(props): string  => props.theme.colors.btn};
+  color: ${(props): string => props.theme.colors.btn};
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -58,9 +66,9 @@ background-color: ${(props): string  => props.theme.colors.btnBackground};
 `;
 
 export const StyledNavBtn = styled.button`
-background-color: ${(props): string  => props.theme.colors.navbtnBackground};
+background-color: ${(props): string => props.theme.colors.navbtnBackground};
   border: none;
-  color: ${(props): string  => props.theme.colors.navbtn};
+  color: ${(props): string => props.theme.colors.navbtn};
   padding: 10px 25px;
   text-align: center;
   text-decoration: none;
@@ -69,5 +77,5 @@ background-color: ${(props): string  => props.theme.colors.navbtnBackground};
 `;
 
 export const StyledHeading = styled.h1`
-color: ${(props): string  => props.theme.colors.font};
+color: ${(props): string => props.theme.colors.font};
 font-family: "Lucida Console", Monaco, monospace;`;
